@@ -12,6 +12,6 @@
 \author{Raphael Perret \and Guillaume Godet-Bar}
 
 
-\RequirePackage{RPG-Manager/pack_all_basic}
+\RequirePackage{.../.../pack_all_basic}
 
 \endinput
