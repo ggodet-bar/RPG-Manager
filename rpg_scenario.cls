@@ -31,7 +31,7 @@
 % Synopsis environment
 \definecolor{synopsisGray}{rgb}{0.92,0.93,0.94}
 \makeatletter\newenvironment{synopsis}{%
-  \begin{lrbox}{\@tempboxa}
+  \noindent\begin{lrbox}{\@tempboxa}
     \begin{minipage}{\columnwidth}
       \noindent\raisedrule[0.5em]{0.5pt}
       \textbf{\Large\ Synopsis\ }
