@@ -15,19 +15,27 @@
 
 \RequirePackage{rpg_all_basic}
 
-%insertion command for element of background
-\newcommand\background[1]
-	{
-	\itshape{#1}
-	}
-	
-
-
 % Raised Rule Command:
 %  Arg 1 (Optional) - How high to raise the rule
 %  Arg 2            - Thickness of the rule
 \newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
 
+
+%summary of the scene environnement -- TAG "scene_summary"
+\definecolor{elementGray}{rgb}{0.92,0.93,0.94}
+\makeatletter\newenvironment{scene_summary}{%
+  \noindent\begin{lrbox}{\@tempboxa}
+    \begin{minipage}{\columnwidth}
+      \noindent\raisedrule[0.5em]{0.5pt}
+      \textbf{\Large\ Summary of this scene \ }
+      \raisedrule[0.5em]{0.5pt}
+      \par}
+    {\par\vspace{-0.6em}\rule{\columnwidth}{0.5pt}\end{minipage}
+  \end{lrbox}%
+\colorbox{elementGray}{\usebox{\@tempboxa}}
+}\makeatother
+
+	
 % Synopsis environment
 \definecolor{synopsisGray}{rgb}{0.92,0.93,0.94}
 \makeatletter\newenvironment{synopsis}{%
