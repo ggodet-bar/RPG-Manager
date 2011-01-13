@@ -13,12 +13,33 @@
 			
 \LoadClass[a4paper,12pt]{book}
 
-\RequirePackage{rpg_all_basic}
+\RequirePackage{/Users/raphaelperret/Documents/RPG-Manager/rpg_all_basic}
+
+\pagestyle{headings}
 
 % Raised Rule Command:
 %  Arg 1 (Optional) - How high to raise the rule
 %  Arg 2            - Thickness of the rule
 \newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+
+%introduction environnement
+\newenvironment{introduction}
+{%
+\newpage
+}
+
+%scene environnement
+\newenvironment{scene}
+{%
+\newpage
+}
+
+%conclusion environnement
+\newenvironment{conclusion}
+{%
+\newpage
+}
 
 
 %summary of the scene environnement -- TAG "scene_summary"
