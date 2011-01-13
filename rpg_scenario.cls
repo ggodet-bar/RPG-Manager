@@ -13,7 +13,7 @@
 			
 \LoadClass[a4paper,12pt]{book}
 
-\RequirePackage{/Users/raphaelperret/Documents/RPG-Manager/rpg_all_basic}
+\RequirePackage{rpg_all_basic}
 
 \pagestyle{headings}
 
