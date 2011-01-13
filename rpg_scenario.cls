@@ -31,6 +31,7 @@
 % Synopsis environment
 \definecolor{synopsisGray}{rgb}{0.92,0.93,0.94}
 \makeatletter\newenvironment{synopsis}{%
+\vspace{0.5em}
   \noindent\begin{lrbox}{\@tempboxa}
     \begin{minipage}{\columnwidth}
       \noindent\raisedrule[0.5em]{0.5pt}
@@ -39,6 +40,7 @@
       \par}
     {\par\vspace{-0.6em}\rule{\columnwidth}{0.5pt}\end{minipage}
   \end{lrbox}%
+\vspace{0.5em}
 \colorbox{synopsisGray}{\usebox{\@tempboxa}}
 }\makeatother
 
