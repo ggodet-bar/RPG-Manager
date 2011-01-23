@@ -1,0 +1,36 @@
+.box {
+  display: inline-block ;
+  width: 320px ;
+  padding: 5px 15px ;
+  margin: 0.4em 0 0.4em 2.4em ;
+  float: right ;
+  background: #ddd ;
+  text-indent: 0 ;
+  font-size: 10.5pt ;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif ;
+}
+
+.box h2 {
+  font-size: 13pt ;
+  color: #555 ;
+}
+
+.sidenote {
+
+}
+
+.synopsis {
+  background: #ddd ;
+  padding: 5px 15px ;
+  margin-bottom: 1em ;
+  clear: both ;
+}
+
+.synopsis h2 {
+  text-align: center ;
+  margin: 0 ;
+}
+
+.synopsis p {
+  margin: 0 ;
+}
