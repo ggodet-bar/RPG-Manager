@@ -1,9 +1,9 @@
 #Introduction
 
-##Master idea
-the first player leaves the psychiatric hospital and meets the second player
+The first player leaves the psychiatric hospital and meets the second player
 (FBI). The introduction ends at the beginning of the questioning of the first
 player by the second.
+{: .synopsis}
 
 This introduction scene should set both the general atmosphere (film noir) and
 discretely introduce the murders committed by the PC's twin sister (and
@@ -15,7 +15,7 @@ watching them react to anecdotes, jokes and trivial debates (e.g., the tipping
 argument in _Reservoir Dogs_). Additionally, the details on Will Sonntag
 provided by the GM by way of the dialogue with Marcy Rice should give some
 hints to the FBI PC for the interrogation scene.
-{: .leading_idea}
+{: .leadingIdea}
 
 The adventure starts as Will Sonntag is given back his wallet and flat keys, as
 he is leaving the Meyerling Institute. His editor from _Black Lilies
