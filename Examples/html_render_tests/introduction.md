@@ -46,18 +46,14 @@ previous week. Note that this information should be drowned into a sea of more
 or less menacing rumors of comparable weirdness. The GM should let this feeling
 sink as long as needed, until the PC chooses to get to bed.
 
-<div markdown="1" class="sidenote">
-##What if the PC leaves home?
-
 If the PC chooses to take a walk, goes to a bar, the GM should nevertheless
 find ways to translate the ominous mood of the scene (e.g. the bar's TV is
 turned on some terrible news, clients look miserable, etc.).
-</div>
-
-<div markdown="1" class="sidenote">
-## Some weird news items
+{:title="What if the PC leaves home?"}
+{:.sidenote}
 
 - element1
 - element 2
-</div>
+{:title="Some weird news items"}
+{:.sidenote}
 
