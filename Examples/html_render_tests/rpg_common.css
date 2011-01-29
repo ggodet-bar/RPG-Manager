@@ -22,6 +22,12 @@ body {
 
 #container {
   padding-bottom: 150px ;
+  -moz-column-count: 2 ;
+  -moz-column-gap: 60px ;
+  -webkit-column-count: 2 !important ;
+  -webkit-column-gap: 60px ;
+  column-count: 2 ;
+  column-gap: 60px ;
   overflow: auto ;
 }
 
