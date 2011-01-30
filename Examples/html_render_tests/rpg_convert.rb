@@ -15,7 +15,7 @@ def inject(template, title, type, content)
           .gsub(/<%=\syield\s%>/, custom_markup(content))
 end
 
-def reformat(doc, node_class, other_class, title=nil)
+def reformat(doc, column, node_class, other_class, title=nil, position=:bottom)
   doc.xpath("*[@class = '#{node_class}']").each do |node|
     node['class'] = ""
     sub_node = node.clone
@@ -23,17 +23,43 @@ def reformat(doc, node_class, other_class, title=nil)
     new_node['class'] = node_class + ' ' + other_class
     new_node.inner_html = "<h2>#{title.nil? ? node['title'] : title}</h2>"
     new_node <<(sub_node)
-    node.replace(new_node)
+
+    if position == :bottom
+      column << new_node
+    else
+      column.first_element_child.before(new_node)
+    end
+    node.remove
   end
 end
 
 def custom_markup(content)
   doc = Nokogiri::HTML.fragment(content)
-  reformat(doc, "sidenote", "box")
-  reformat(doc, "actingDirection", "box", "Acting directions")
-  reformat(doc, "synopsis", "", "Scene synopsis")
-  reformat(doc, "leadingIdea", "box", "Leading idea")
-  doc.to_html
+
+  # Creation of third column
+  column = Nokogiri::XML::Node.new("div", doc)
+  column['class'] = 'thirdColumn'
+
+
+  main = Nokogiri::XML::Node.new("div", doc)
+  main['class'] = 'main'
+
+  container = Nokogiri::XML::Node.new("div", doc)
+
+  if doc.children.first.name == "h1"
+    container << doc.children.first
+  end
+
+  doc.children.each {|node| main << node}
+
+  container << main
+  container << column
+
+  reformat(main, column, "leadingIdea", "box", "Leading idea")
+  reformat(main, column, "actingDirection", "box", "Acting directions")
+  reformat(main, column, "sidenote", "box")
+  reformat(main, main, "synopsis", "", "Scene synopsis", :top)
+  container.children.to_html
 end
 
 if ARGV.size != 2

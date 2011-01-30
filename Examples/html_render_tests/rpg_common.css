@@ -16,19 +16,31 @@ body {
 #wrapper {
   position: relative ;
   margin: 0 auto ;
-  width: 960px ;
+  width: 1280px ;
   min-height: 100% ;
 }
 
 #container {
   padding-bottom: 150px ;
-  -moz-column-count: 2 ;
-  -moz-column-gap: 60px ;
-  -webkit-column-count: 2 !important ;
-  -webkit-column-gap: 60px ;
-  column-count: 2 ;
-  column-gap: 60px ;
   overflow: auto ;
+}
+
+.main {
+  display: inline-block ;
+  width: 840px ;
+  -moz-column-count: 2 ;
+  -moz-column-gap: 40px ;
+  -webkit-column-count: 2 ;
+  -webkit-column-gap: 40px ;
+  column-count: 2 ;
+  column-gap: 40px ;
+}
+
+.thirdColumn {
+  display: inline-block ;
+  vertical-align: top ;
+  width: 400px ;
+  margin-left: 36px ;
 }
 
 .header {
