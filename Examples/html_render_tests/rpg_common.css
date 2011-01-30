@@ -9,7 +9,7 @@ html {
 
 body {
   font-family: Georgia, "Times New Roman", serif ;
-  font-size: 13pt ;
+  font-size: 12pt ;
   height: 100% ;
 }
 
@@ -64,7 +64,8 @@ ul {
 }
 
 #footer-content {
-  margin: 2em auto ;
+  margin: 0 auto ;
+  padding-top: 2em ;
   width: 960px ;
   text-align: center ;
   color: #ccc ;
