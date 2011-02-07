@@ -1,0 +1,96 @@
+* {
+  margin: 0 ;
+  padding: 0 ;
+}
+
+html {
+  height: 100% ;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif ;
+  font-size: 12pt ;
+  height: 100% ;
+}
+
+#wrapper {
+  position: relative ;
+  margin: 0 auto ;
+  width: 960px ;
+  min-height: 100% ;
+}
+
+#container {
+  padding-bottom: 150px ;
+  -moz-column-count: 2 ;
+  -moz-column-gap: 60px ;
+  -webkit-column-count: 2 !important ;
+  -webkit-column-gap: 60px ;
+  column-count: 2 ;
+  column-gap: 60px ;
+  overflow: auto ;
+}
+
+.header {
+  text-align: center ;
+  margin-bottom: 2em ;
+}
+
+h2 {
+  margin-bottom: 6pt ;
+}
+
+div > p:first-child, .leading_idea + p, h1 + p, h2 + p, h3 + p, h4 + p {
+  text-indent: 0 ;
+}
+
+p {
+  margin-bottom: 6pt ;
+  text-align: justify ;
+  text-justify: newspaper ;
+  line-height: 1.25em ;
+  text-indent: 1em ;
+}
+
+ul {
+  list-style-position: inside ;
+}
+
+#footer {
+  position: relative ;
+  clear: both ;
+  height: 150px ;
+  margin-top: -150px ;
+}
+
+#footer-content {
+  margin: 0 auto ;
+  padding-top: 2em ;
+  width: 960px ;
+  text-align: center ;
+  color: #ccc ;
+}
+
+/*Opera Fix*/
+body:before {/* thanks to Maleika (Kohoutec)*/
+content:"";
+height:100%;
+float:left;
+width:0;
+margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+}
+
+
+
+/* IMPORTANT
+
+You also need to include this conditional style in the <head> of your HTML file to feed this style to IE 6 and lower and 8 and higher.
+
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+
+*/
+
