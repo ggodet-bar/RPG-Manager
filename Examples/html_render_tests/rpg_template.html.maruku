@@ -5,6 +5,7 @@
 <html xml:lang='en' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/1999/xhtml'>
   <head><meta content='application/xhtml+xml;charset=utf-8' http-equiv='Content-type' />
     <title><%= title %></title>
+    <link href="rpg_common_print.css" rel="stylesheet" media="print" type="text/css" />
     <link href="rpg_common.css" rel="stylesheet" media="screen,print" type="text/css" />
     <link href="rpg_<%= type %>.css" rel="stylesheet" media="screen,print" type="text/css" />
   </head>

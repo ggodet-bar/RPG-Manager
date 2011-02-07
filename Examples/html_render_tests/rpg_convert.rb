@@ -10,6 +10,11 @@ def usage
 end
 
 def inject(template, title, type, content)
+  if type == "pc"
+    type = "player_character"
+  elsif type == "npc"
+    type = "player_character"
+  end
   template.gsub(/<%=\stype\s%>/, type) \
           .gsub(/<%=\stitle\s%>/, title) \
           .gsub(/<%=\syield\s%>/, custom_markup(content))
