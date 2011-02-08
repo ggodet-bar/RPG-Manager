@@ -1,0 +1,4 @@
+CLASS: location
+
+# Baron Station
+

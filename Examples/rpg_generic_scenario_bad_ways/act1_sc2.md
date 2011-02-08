@@ -1,12 +1,13 @@
-\subsection{Scene 2 -  A Strange Death}
+CLASS: scenario
 
-\begin{scene_summary}
+# Scene 2 - A Strange Death
+
+
 Questions about the events surrounding Harry Endring's death, link with a
 probable supernatural act and the Daddy Voodoo solution to get information.
-\end{scene_summary}
+{: .synopsis}
 
-
-\begin{location_description}
 The characters refuge in a typical coffee shop on the street corner. A waitress
 brings coffee. Some quiet offbeat music resonates during the whole scene.
-\end{location_description}
+{:title="Location description"}
+{: .sidenote}

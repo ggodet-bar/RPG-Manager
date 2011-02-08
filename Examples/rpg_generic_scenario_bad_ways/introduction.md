@@ -1,3 +1,5 @@
+CLASS: scenario
+
 #Introduction
 
 The first player leaves the psychiatric hospital and meets the second player
