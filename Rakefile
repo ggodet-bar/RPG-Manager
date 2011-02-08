@@ -11,7 +11,7 @@ Dir['Examples/*'].each do |path|
     sub_directory = path
     convertible = Dir[File.join sub_directory, '**', '*.md']
     unless convertible.empty?
-      FileUtils.rm_r File.join(sub_directory, 'html_output')
+      FileUtils.rm_rf File.join(sub_directory, 'html_output')
       FileUtils.mkdir_p File.join(sub_directory, 'html_output', 'css')
       FileUtils.cp Dir['assets/stylesheets/*.css'], File.join(sub_directory, 'html_output', 'css')
       convertible.each do |md_path|
