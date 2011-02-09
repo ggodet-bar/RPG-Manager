@@ -2,4 +2,4 @@
 *.aux
 *.synctex.gz
 .*.swp
-Examples/**/*.html
+Examples/**/html_output
