@@ -2,5 +2,4 @@
 *.aux
 *.synctex.gz
 .*.swp
-Examples/**/*.sty
-Examples/**/*.cls
+Examples/**/*.html
