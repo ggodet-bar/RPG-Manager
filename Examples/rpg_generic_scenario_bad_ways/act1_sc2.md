@@ -4,14 +4,14 @@ CLASS: scenario
 
 
 Questions about the events surrounding Harry Endring's death, link with a
-probable supernatural act and the Baron Hobo solution to get information.
+probable supernatural act and the Papa Legba track to get information.
 {: .synopsis}
 
 The PCs will certainly take refuge in a coffee shop called _The endless corner_ 
 in order to discuss what they've just been witness to. They will hopefully try to 
 recollect what has been happening since Sonntag was brought into the police
 station. Of course, the only person that might be linked with the events
-is Baron Hobo. Experienced GMs are encouraged to let their players
+is Papa Legba. Experienced GMs are encouraged to let their players
 wander around a bit, and maybe throw an occult event or two if they get
 stuck. Less confident GMs should find a way
 to bring back the PCs to the stations (Caleb Anders will _eventually_ be
