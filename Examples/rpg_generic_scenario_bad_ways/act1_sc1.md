@@ -26,7 +26,7 @@ mandate from a federal judge.
 Whatever comes out of this sequence, Will Sonntag should be brought to the
 FBI's local office (or whatever office they've taken over). As he is taken out
 of the police car, a homeless bystander (in fact, [REF NPC] this is the first
-apparition of Baron Hobo) starts screaming and blathering about the end of the
+apparition of Papa Legba) starts screaming and blathering about the end of the
 world, the advent of demonic forces. He finally points at Sonntag and calls him
 Half-Antichrist, Child of Paradox, Incubus of Apocalypse (GMs are encouraged to
 elaborate on this occult streak). While Sonntag is pushed into the corridors of
@@ -89,5 +89,4 @@ The questioning takes place in a room in the offices of the FBI. A simple
 rectangular table occupies the center of the room. Two chairs either side of
 the table lets one realize without too much difficulty the usage of this
 place.
-{:title="Location description"}
-{: .sidenote}
+{: .location}
