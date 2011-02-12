@@ -1,4 +1,6 @@
 CLASS: npc
+TITLE: Papa Legba
+SHORT: legba
 
 # Papa Legba
 

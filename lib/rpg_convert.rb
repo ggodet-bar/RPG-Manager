@@ -7,8 +7,11 @@ module RPGConvert
 
   TEMPLATE_FILE = 'assets/templates/rpg_template.html.kramdown'
   CLASS_REGEX = /^\s*CLASS\s*:\s*(\w+)\s*/
+  CHARACTER_REGEX = /n?pc!([a-z]+(_?[a-z]+)?)/
 
   def self.inject(template, title, type, content)
+    linked_content = create_links(content)
+
     if type == "pc"
       type = "player_character"
     elsif type == "npc"
@@ -16,55 +19,61 @@ module RPGConvert
     end
     template.gsub(/<%=\stype\s%>/, type) \
             .gsub(/<%=\stitle\s%>/, title) \
-            .gsub(/<%=\syield\s%>/, custom_markup(content))
+            .gsub(/<%=\syield\s%>/, custom_markup(linked_content))
   end
 
-def self.reformat(doc, column, node_class, other_class, title=nil, position=:bottom)
-  doc.xpath("*[@class = '#{node_class}']").each do |node|
-    node['class'] = ""
-    sub_node = node.clone
-    new_node = Nokogiri::XML::Node.new("div", doc)
-    new_node['class'] = node_class + ' ' + other_class
-    new_node.inner_html = "<h2>#{title.nil? ? node['title'] : title}</h2>"
-    new_node <<(sub_node)
-
-    if position == :bottom
-      column << new_node
-    else
-      column.first_element_child.before(new_node)
+  def self.reformat(doc, column, node_class, other_class, title=nil, position=:bottom)
+    doc.xpath("*[@class = '#{node_class}']").each do |node|
+      node['class'] = ""
+      sub_node = node.clone
+      new_node = Nokogiri::XML::Node.new("div", doc)
+      new_node['class'] = node_class + ' ' + other_class
+      new_node.inner_html = "<h2>#{title.nil? ? node['title'] : title}</h2>"
+      new_node <<(sub_node)
+  
+      if position == :bottom
+        column << new_node
+      else
+        column.first_element_child.before(new_node)
+      end
+      node.remove
     end
-    node.remove
   end
-end
-
-def self.custom_markup(content)
-  doc = Nokogiri::HTML.fragment(content)
-
-  # Creation of third column
-  column = Nokogiri::XML::Node.new("div", doc)
-  column['class'] = 'thirdColumn'
-
-
-  main = Nokogiri::XML::Node.new("div", doc)
-  main['class'] = 'main'
-
-  container = Nokogiri::XML::Node.new("div", doc)
-
-  if doc.children.first.name == "h1"
-    container << doc.children.first
+  
+  
+  def self.create_links(markdown)
+    markdown.gsub(CHARACTER_REGEX, '<a href="...">\1</a>')
   end
-
-  doc.children.each {|node| main << node}
-
-  container << main
-  container << column
-
-  reformat(main, column, "leadingIdea", "box", "Leading idea")
-  reformat(main, column, "actingDirection", "box", "Acting directions")
-  reformat(main, column, "sidenote", "box")
-  reformat(main, main, "synopsis", "", "Scene synopsis", :top)
-  container.children.to_html
-end
+  
+  def self.custom_markup(content)
+    doc = Nokogiri::HTML.fragment(content)
+  
+    # Creation of third column
+    column = Nokogiri::XML::Node.new("div", doc)
+    column['class'] = 'thirdColumn'
+  
+  
+    main = Nokogiri::XML::Node.new("div", doc)
+    main['class'] = 'main'
+  
+    container = Nokogiri::XML::Node.new("div", doc)
+  
+    if doc.children.first.name == "h1"
+      container << doc.children.first
+    end
+  
+    doc.children.each {|node| main << node}
+  
+    container << main
+    container << column
+  
+    reformat(main, column, "leadingIdea", "box", "Leading idea")
+    reformat(main, column, "actingDirection", "box", "Acting directions")
+    reformat(main, column, "location", "box", "Location description")
+    reformat(main, column, "sidenote", "box")
+    reformat(main, main, "synopsis", "", "Scene synopsis", :top)
+    container.children.to_html
+  end
 
 
   def self.convert(input_file, output_dir)

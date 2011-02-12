@@ -89,5 +89,4 @@ The questioning takes place in a room in the offices of the FBI. A simple
 rectangular table occupies the center of the room. Two chairs either side of
 the table lets one realize without too much difficulty the usage of this
 place.
-{:title="Location description"}
-{: .sidenote}
+{: .location}
