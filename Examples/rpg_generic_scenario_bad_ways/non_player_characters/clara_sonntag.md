@@ -9,7 +9,7 @@ of obscuring the rest of the world? And you ladies, you also know this woman to 
 left all day between fascination and jealousy. Clara Sonntag is what kind of woman, long black hair, 
 emerald green eyes and a outline not to be ashamed in front of a photographer ....
 
-It seems that we are in the presence of a woman who attracts the envy of all ... And this is even 
+It seems that we are in presence of a woman who attracts the envy of all ... And this is even 
 more true that you can not think it. It is true that men and sometimes women, fought for her, yet he 
 has won his love is neither a man nor a woman, in fact it is not even a human being .... 
 Clara Sonntag give her heart (and incidentally his soul) to the devil.

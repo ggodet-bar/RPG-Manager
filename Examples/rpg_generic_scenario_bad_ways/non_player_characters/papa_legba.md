@@ -23,3 +23,7 @@ appear to witnesses as flashes of light, swift shadows or small patches
 of fog moving at unusual speed. Additionally, the jinns are able to
 communicate intelligibly with angels and demons alone, but may only
 reach out to humans through sensations and blurred dreams.
+
+Initiated since immemorial time to ancient arts, Papa Legba knows many rituals, 
+some harmless, others scary. Of all, the ritual of banishment is the most feared 
+among angels or demons.
