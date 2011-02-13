@@ -1,6 +1,5 @@
 CLASS: scenario
-
-# Scene 1 - FBI Interrogation
+TITLE: Scene 1 - FBI Interrogation
 
 Will Sonntag is brought to the local police station, where the FBI has just
 taken control of operations for investigating on a series of murders. This is

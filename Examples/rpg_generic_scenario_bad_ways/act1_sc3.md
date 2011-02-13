@@ -1,6 +1,5 @@
 CLASS: scenario
-
-# Scene 3 - Meet Papa Legba
+TITLE: Scene 3 - Meet Papa Legba 
 
 The PCs meet Papa Legba. They encounter also for first time a member of the Brotherhood of Ashkelon.
 {: .synopsis}

@@ -1,8 +1,6 @@
 CLASS: npc
 TITLE: Papa Legba
-SHORT: legba
-
-# Papa Legba
+ABBR: legb
 
 A strange Cajun homeless madman.
 

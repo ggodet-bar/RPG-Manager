@@ -1,6 +1,7 @@
 CLASS: location
+TITLE: Endless Corner
 
-# The Endless Corner Coffee shop
+The Endless Corner Coffee shop
 
 
 In a near down street corner of FBI building, The Endless Corner is the favorite lair special agents.

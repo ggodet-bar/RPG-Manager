@@ -1,7 +1,5 @@
 CLASS: scenario
-
-# Scene 2 - A Strange Death
-
+TITLE: Scene 2 - A Strange Death
 
 Questions about the events surrounding Harry Endring's death, link with a
 probable supernatural act and the npc!legb track to get information.

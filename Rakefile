@@ -9,15 +9,12 @@ task :convert
 Dir['Examples/*'].each do |path|
   if File.directory?(path)
     sub_directory = path
-    convertible = Dir[File.join sub_directory, '**', '*.md']
-    unless convertible.empty?
+    convertibles = Dir[File.join sub_directory, '**', '*.md']
+    unless convertibles.empty?
       FileUtils.rm_rf File.join(sub_directory, 'html_output')
       FileUtils.mkdir_p File.join(sub_directory, 'html_output', 'css')
       FileUtils.cp Dir['assets/stylesheets/*.css'], File.join(sub_directory, 'html_output', 'css')
-      convertible.each do |md_path|
-        puts "Converting: " + md_path
-        RPGConvert::convert(md_path, File.join(sub_directory, 'html_output'))
-      end
+      RPGConvert::convert_all(convertibles, File.join(sub_directory, 'html_output'))
     end
   end
 end

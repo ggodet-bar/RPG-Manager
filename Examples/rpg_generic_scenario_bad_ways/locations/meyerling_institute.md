@@ -1,7 +1,5 @@
 CLASS: location
-
-# Meyerling Institute of Mental Health
-
+TITLE: Meyerling Institute of Mental Health
 
 For as long as people remember, the Meyerling Institute has always been
 an hospital for treating the mentally ill. Rumor has it that its

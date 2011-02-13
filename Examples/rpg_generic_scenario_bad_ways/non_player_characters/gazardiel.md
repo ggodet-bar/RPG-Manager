@@ -1,3 +1,4 @@
 CLASS: npc
+TITLE: Gazardiel
 
-# Gazardiel, Angel of New Beginnings
+Gazardiel, Angel of New Beginnings

@@ -1,6 +1,5 @@
 CLASS: npc
-
-# Harry Endrings
+TITLE: Harry Endrings
 
 Caleb Anders' partner at the Bureau.
 

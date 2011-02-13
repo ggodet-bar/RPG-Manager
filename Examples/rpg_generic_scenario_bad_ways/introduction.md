@@ -1,6 +1,5 @@
 CLASS: scenario
-
-#Introduction
+TITLE: Introduction
 
 The first player leaves the psychiatric hospital and meets the second player
 (FBI). The introduction ends at the beginning of the questioning of the first

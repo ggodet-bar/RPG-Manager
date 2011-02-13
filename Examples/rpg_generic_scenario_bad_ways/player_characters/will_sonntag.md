@@ -1,6 +1,5 @@
 CLASS: pc
-
-# Will Sonntag
+TITLE: Will Sonntag
 
 A lousy occult romance writer, Will Sonntag has nevertheless had a few high
 moments in his career. His _"Tenebræ Cantos"_ made a few hundred

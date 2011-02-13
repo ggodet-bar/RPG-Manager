@@ -1,6 +1,5 @@
 CLASS: npc
-
-# Clara Sonntag
+TITLE: Clara Sonntag
 
 Twin sister to Will Sonntag.
 

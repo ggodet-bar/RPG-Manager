@@ -1,6 +1,5 @@
 CLASS: pc
-
-# Caleb Anders
+TITLE: Caleb Anders
 
 FBI player character.
 

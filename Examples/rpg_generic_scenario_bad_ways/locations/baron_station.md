@@ -1,6 +1,6 @@
-CLASS: location
-
-# Legba Station
+CLASS: loc
+TITLE: Legba Station
+ABBR: station
 
 npc!legb chose to reside in this abandoned station decades ago. He
 receives demons and angels in an old subway wagon that was conveniently
