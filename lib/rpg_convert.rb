@@ -11,9 +11,19 @@ module RPGConvert
   ABBR_REGEX  = /^\s*ABBR\s*:\s*(.+)\s*$/
   CHARACTER_REGEX = /(org|loc|n?pc)!([a-z]+(_?[a-z]+)?)/
 
+  # Handles the interpolation of the transformed Markdown content with
+  # the HTML template.
+  #
+  # @param [String] template The HTML template, passed as a String.
+  # @param [String] title    The page's title, which will be displayed
+  #                          in the final page's `<head>` and in the
+  #                          page's body, as a h1 tag.
+  # @param [String] type     The content's type (either a pc, npc, loc
+  #                          or org).
+  # @param [String] content  The Markdown content.
+  # @return [String]         The result of the interpolation
+  #
   def self.inject(template, title, type, content)
-    #linked_content = create_links(content)
-
     if type == "pc"
       type = "player_character"
     elsif type == "npc"
@@ -24,6 +34,22 @@ module RPGConvert
             .gsub(/<%=\syield\s%>/, custom_markup(title, content))
   end
 
+  # Reformats a set of nodes identified by their class.
+  #
+  # @param [Nokogiri::HTML::Fragment] doc The converted Markdown
+  #                                       document.
+  # @param [Nokogiri::XML::Node] column   The column into which the
+  #                                       targetted nodes should be
+  #                                       transferred.
+  # @param [String] node_class  The CSS class of the HTML tags that
+  #                             should be reformatted.
+  # @param [String] other_class Optional class that should be added to
+  #                             the resulting node.
+  # @param [String] title       Optional title that should be added as a
+  #                             child of the resulting node.
+  # @param [Symbol] position    Position of the resulting node, relative
+  #                             to the target column.
+  #
   def self.reformat(doc, column, node_class, other_class, title=nil, position=:bottom)
     doc.xpath("*[@class = '#{node_class}']").each do |node|
       node['class'] = ""
@@ -42,6 +68,15 @@ module RPGConvert
     end
   end
   
+  # Replaces all references of PCs, NPCs, locations and organisations by
+  # an HTML link featuring the actual name of the item.
+  #
+  # @param [String] markdown The markdown content that should be
+  #                          modified.
+  # @param [Hash]   abbr_map Hash of link tags with the corresponding
+  #                          name.
+  # @return [String] The modified Markdown content.
+  #
   def self.create_links(markdown, abbr_map)
     while match = markdown.match(CHARACTER_REGEX)
       markdown.gsub!(match[0], "<a href='...'>#{abbr_map[match[0]]}</a>")
@@ -49,6 +84,13 @@ module RPGConvert
     markdown
   end
   
+  # Restructures the HTML content, initially presented as a String.Adds
+  # columns and reformats the sidenotes.
+  #
+  # @param [String] title   The HTML page's title
+  # @param [String] content The HTML content
+  # @return [Nokogiri::HTML::Fragment] the reformatted HTML document.
+  #
   def self.custom_markup(title, content)
     doc = Nokogiri::HTML.fragment(content)
   
@@ -84,7 +126,11 @@ module RPGConvert
     container.children.to_html
   end
 
-
+  # Extracts all relevant data from the Markdown input file.
+  #
+  # @param [String] input_file Path to the input file.
+  # @return [Hash]  A Hash of data extracted from the input file.
+  #
   def self.extract_file_data(input_file)
     extension = File.extname(input_file)
     file_name = File.basename(input_file, extension)
@@ -94,7 +140,6 @@ module RPGConvert
     end
 
     file_class = raw_content.match(CLASS_REGEX)
-
     unless file_class.nil?
       raw_content = raw_content.gsub(CLASS_REGEX, '')
       file_class = file_class[1]
@@ -123,6 +168,18 @@ module RPGConvert
   end
 
 
+  # Converts all the data previously extracted from the Markdown input
+  # file into a HTML file, then writes it down into an the HTML output
+  # file.
+  #
+  # @param [Hash]   data       Hash of data required from the Markdown
+  #                            to HTML conversion.
+  # @param [String] output_dir Path to the output directory, where the
+  #                            resulting file should be written.
+  # @param [String] template   The HTML template, presented as a String.
+  # @param [Hash]   abbr_map   Map of link tags with the corresponding
+  #                            names.
+  #
   def self.convert(data, output_dir, template, abbr_map)
     data[:content] = create_links(data[:content], abbr_map)
 
@@ -134,6 +191,13 @@ module RPGConvert
   end
 
 
+  # Converts a set of Markdown files into HTML files, that are then
+  # written into a given output path.
+  #
+  # @param [Array<String] md_files    Array of Markdown file paths.
+  # @param String         output_path Path to the directory where the
+  #                                   converted files should be written.
+  #
   def self.convert_all(md_files, output_path)
     template = File.open(TEMPLATE_FILE) do |f|
       f.read
