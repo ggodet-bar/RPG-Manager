@@ -7,7 +7,7 @@ module RPGConvert
 
   TEMPLATE_FILE = 'assets/templates/rpg_template.html.kramdown'
   CLASS_REGEX = /^\s*CLASS\s*:\s*(\w+)\s*/
-  CHARACTER_REGEX = /n?pc!([a-z]+(_?[a-z]+)?)/
+  CHARACTER_REGEX = /(org|loc|n?pc)!([a-z]+(_?[a-z]+)?)/
 
   def self.inject(template, title, type, content)
     linked_content = create_links(content)
@@ -42,7 +42,7 @@ module RPGConvert
   
   
   def self.create_links(markdown)
-    markdown.gsub(CHARACTER_REGEX, '<a href="...">\1</a>')
+    markdown.gsub(CHARACTER_REGEX, '<a href="...">\2</a>')
   end
   
   def self.custom_markup(content)
