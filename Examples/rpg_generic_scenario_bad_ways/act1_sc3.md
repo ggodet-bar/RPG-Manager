@@ -14,3 +14,7 @@ While its location is well-known amongst the occult circles, the PCs
 should have a hard time finding it.
 
 XXX Suggestions for helping players find Legba Station
+
+When the PCs reach loc!station, npc!legb is receiving Father John Upton,
+spokesman for the Ascalon Brotherhood, and Gazardiel, Angel of New
+Beginnings.
