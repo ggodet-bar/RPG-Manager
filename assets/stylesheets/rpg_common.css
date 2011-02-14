@@ -48,11 +48,17 @@ body {
   margin-bottom: 2em ;
 }
 
-h2 {
-  margin-bottom: 6pt ;
+.pageTitle {
+  margin-bottom: 1em ;
+  margin-top: 1em ;
 }
 
-div > p:first-child, .leading_idea + p, h1 + p, h2 + p, h3 + p, h4 + p {
+h2 {
+  margin-bottom: 6px ;
+  margin-top: 6px ;
+}
+
+p:first-child, .synopsis + p, h1 + p, h2 + p, h3 + p, h4 + p {
   text-indent: 0 ;
 }
 

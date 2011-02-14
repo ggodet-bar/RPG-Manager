@@ -1,6 +1,11 @@
+@font-face {
+  font-family: Junction ;
+  src: url('../fonts/Junction.otf') ;
+}
+
 .box {
   width: 370px ;
-  padding: 5px 15px ;
+  padding: 8px 15px ;
   margin: 0 0 0.6em ;
   background: #ddd ;
   text-indent: 0 ;
@@ -13,8 +18,11 @@
 }
 
 .box h2 {
-  font-size: 13pt ;
+  font-size: 17px ;
   color: #555 ;
+  font-family: Junction, "Helvetica Neue", Helvetica, Arial, sans-serif ;
+  font-weight: normal ;
+  line-height: 11px ;
 }
 
 .sidenote {
