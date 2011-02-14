@@ -6,6 +6,7 @@ require 'nokogiri'
 module RPGConvert
 
   TEMPLATE_FILE = 'assets/templates/rpg_template.html.kramdown'
+  TAG_SEPARATOR = '!'
   CLASS_REGEX = /^\s*CLASS\s*:\s*(.+)\s*$/
   TITLE_REGEX = /^\s*TITLE\s*:\s*(.+)\s*$/
   ABBR_REGEX  = /^\s*ABBR\s*:\s*(.+)\s*$/
@@ -126,6 +127,22 @@ module RPGConvert
     container.children.to_html
   end
 
+  # Extracts the data corresponding to the regular expression (if any),
+  # deletes the whole matched substring from the input content and
+  # returns the first matched group.
+  #
+  # @param [String] content The parsed content
+  # @param [Regexp] regex   The regular expression
+  # @return [String] The matched content, or nil if none was found
+  #
+  def self.extract_regexed_data(content, regex)
+    if result = content.match(regex)
+      content.gsub!(regex, '')
+      result = result[1]
+    end
+    result
+  end
+
   # Extracts all relevant data from the Markdown input file.
   #
   # @param [String] input_file Path to the input file.
@@ -139,23 +156,11 @@ module RPGConvert
       f.read
     end
 
-    file_class = raw_content.match(CLASS_REGEX)
-    unless file_class.nil?
-      raw_content = raw_content.gsub(CLASS_REGEX, '')
-      file_class = file_class[1]
-    end
-
-    abbreviation = raw_content.match(ABBR_REGEX)
-    unless abbreviation.nil?
-      raw_content = raw_content.gsub(ABBR_REGEX, '')
-      abbreviation = abbreviation[1]
-    end
-
-    title = raw_content.match(TITLE_REGEX)
-    unless title.nil?
-      raw_content = raw_content.gsub(TITLE_REGEX, '')
-      title = title[1]
-    end
+    file_class, abbreviation, title = [
+      extract_regexed_data(raw_content, CLASS_REGEX),
+      extract_regexed_data(raw_content, ABBR_REGEX),
+      extract_regexed_data(raw_content, TITLE_REGEX)
+    ]
 
     {
       :file_name    => file_name,
@@ -207,7 +212,7 @@ module RPGConvert
     files = []
     md_files.each do |file|
       data = extract_file_data(file)
-      abbr_map[data[:class] + '!' + data[:abbreviation]] = data[:title]
+      abbr_map[data[:class] + TAG_SEPARATOR + data[:abbreviation]] = data[:title]
       files << data
     end
 
