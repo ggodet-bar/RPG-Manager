@@ -13,3 +13,9 @@ Caleb Anderson was sent to investigate a murder which shows similarities with on
 
 -The murder looks strangely like the book "Wedding Day" Will Sonntag
 -A quirk of Clara for a wedding dress for her demon
+-Dress dyed in the blood of the bride
+-the dress is not suitable for Clara and she left behind completely torn
+
+Evidence found in this scene
+-the killer is a woman
+{: .evidence}
