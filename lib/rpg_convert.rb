@@ -5,7 +5,7 @@ require 'nokogiri'
 
 module RPGConvert
 
-  TEMPLATE_FILE = 'assets/templates/rpg_template.html.kramdown'
+  TEMPLATE_FILE = 'templates/rpg_template.html.kramdown'
   TAG_SEPARATOR = '!'
   CLASS_REGEX = /^\s*CLASS\s*:\s*(.+)\s*$/
   TITLE_REGEX = /^\s*TITLE\s*:\s*(.+)\s*$/
@@ -167,7 +167,7 @@ module RPGConvert
       {
         :file_name    => file_name,
         :extension    => extension,
-        :class        => file_class,
+        :class        => file_class || 'common',
         :abbreviation => abbreviation || '',
         :title        => title || '',
         :content      => raw_content
@@ -205,10 +205,8 @@ module RPGConvert
     # @param String         output_path Path to the directory where the
     #                                   converted files should be written.
     #
-    def convert_all(md_files, output_path)
-      template = File.open(TEMPLATE_FILE) do |f|
-        f.read
-      end
+    def convert_all(base_dir, md_files, output_path)
+      template = File.read(File.join(base_dir, TEMPLATE_FILE))
 
       abbr_map = {}
       files = []

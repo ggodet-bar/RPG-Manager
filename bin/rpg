@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '../lib'))
+require File.join(File.dirname(__FILE__), '../lib/tasks/runner')
+
+
+RPG.start
+
